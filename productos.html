@@ -1,0 +1,716 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Micrómetro S.A.S</title>
+	<link rel="stylesheet" type="text/css" href="estilos/Productos.css">
+	<link rel="icon" type="image/x-icon" href="imagenes/icono.png">
+	<script src="https://kit.fontawesome.com/d89ee32d1f.js" crossorigin="anonymous"></script> 
+</head>
+<style>
+.header {
+       background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+nav {
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Espaciado entre enlaces */ 
+    justify-content: flex-start; /* Alineación a la izquierda */
+}
+
+.menu-icon {
+    display: none; /* Oculto por defecto */
+    cursor: pointer;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Oculta los enlaces en móviles */
+        flex-direction: column; /* Verticaliza los enlaces */
+        position: absolute;
+        top: 60px; /* Alineación bajo el menú */
+        left:-122 px;
+        right: 0;
+        background-color: white; /* Fondo del menú */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .menu-icon {
+        display: block; /* Muestra el icono del menú en móviles */
+    }
+
+    .nav-links.active {
+        display: flex; /* Muestra el menú cuando esté activo */
+    }
+} 
+/* Estilos base para productos */
+.product-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.product {
+  width: calc(33.333% - 20px); /* Tres productos por fila en pantallas grandes */
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-txt {
+  text-align: center;
+}
+
+/* Media query para tablets */
+@media (max-width: 768px) {
+  .product {
+    width: calc(50% - 20px); /* Dos productos por fila en pantallas medianas */
+  }
+}
+
+/* Media query para celulares */
+@media (max-width: 480px) {
+  .product {
+    width: 100%; /* Un producto por fila en pantallas pequeñas */
+  }
+}
+
+
+</style>
+<body>
+<!-- Botón flotante del carrito -->
+<div class="carrito-flotante" id="carrito-flotante">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cantidad-productos">0</span>
+</div>
+
+	<script src="script.js"></script>
+
+<header class="header">
+    <img src="imagenes/Logo.png" class="logo_img">
+    <nav>
+        <a href="index.html" class="link_menu" id="Inicio">INICIO</a>
+        <div class="dropdown-2">
+            <a href="empresa.html" class="link_menu" id="Inicio">EMPRESA</a>
+        <div class="dropdown-2">
+                </div>
+        </div>
+        <a href="Productos.html" class="link_menu" id="Productos">PRODUCTOS</a>
+
+
+    </nav>
+</header>
+
+
+<div class="header-content container">
+
+	<div class="header-txt">
+	<span>Bienvenido a nuestra tienda</span>
+		<h1>Nuestros Productos</h1>
+	<p>
+	Descubre nuestra amplia gama de productos diseñados para satisfacer tus necesidades industriales y mecánicas.<br><br>
+
+Productos Mecanizados: Ofrecemos componentes de precisión fabricados con tecnologías avanzadas, garantizando calidad y durabilidad. Nuestros productos mecanizados son ideales para aplicaciones específicas en diversas industrias.<br><br>
+
+Corte por Plasma: Disponemos de servicios de corte por plasma de alta precisión, capaces de trabajar con una variedad de materiales. Este método asegura cortes limpios y eficaces, adaptándose a tus requerimientos.<br><br>
+
+Estructuras y Partes Mecánicas: Proporcionamos estructuras robustas y componentes mecánicos personalizados, diseñados para soportar las exigencias de tus proyectos. Cada pieza es fabricada con estándares rigurosos de calidad.
+    </p>
+	
+	
+	</div>
+	<div class="header-img">
+	<img src="imagenes/center2.jpg" alt="">
+	</div>
+	
+	</div>
+
+<div class="titulo-productos">
+	<h6>PRODUCTOS</h6>
+</div>
+
+<style>
+    
+/*Sub menu*/
+
+.submenu{
+    display: flex !important;
+    align-items: center!important;
+    overflow: hidden!important;
+    margin-top: 20px!important;
+}
+
+.submenu ul{
+    display: flex!important;
+    list-style: none!important;
+    width: 100%!important;
+    justify-content: center!important;
+    padding: 10px!important;
+}
+
+.submenu li{
+    width: 250px;
+    margin: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 45px;
+    background-color: #DC2323;
+    height: 45px;
+}
+
+.submenu li:hover{
+    background-color: #0A3CF9;
+}
+
+.submenu a{
+    font-size: 20px;
+    font-family:  "Roboto", sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+}
+
+.submenu a:hover{
+    color: white;
+}
+.productos{
+    margin-top: 20px;
+}
+
+</style>
+
+	
+		<main class="productos">
+		<div class="product-content">
+			<div class="product">
+			<img src="imagenes/productos/1.jpg" alt="">
+			<div class="product-txt">
+			<h3>Ejes estriados</h3>
+			<p>Tornillo Exagonal 2 in x 200 mm con tuerca</p>
+			<p class="precio">$400000</p>
+			<a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
+			</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/2.jpg" alt="">
+				<div class="product-txt">
+				<h3>Ejes lisos</h3>
+				<p>Tornillo liso 25cm x 80 mm</p>
+				<p class="precio">$40000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/3.jpg" alt="">
+				<div class="product-txt">
+			    <h3>Ejes con cuñeros</h3>
+				<p>Tornillo con cuñero 40mm x 150mm</p>
+				<p class="precio">$70000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/4.jpg" alt="">
+				<div class="product-txt">
+				<h3>Piñones</h3>
+				<p>Piñones rectos 100 mm y 20 dientes</p>
+				<p class="precio">$400000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/5.jpg" alt="">
+				<div class="product-txt">
+				<h3>Tuercas Y Tornillos</h3>
+				<p>Tuercas y tornillos 125 mm</p>
+				<p class="precio">$100000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/6.jpg" alt="">
+				<div class="product-txt">
+				<h3>Ruedas Pequeñas</h3>
+				<p>Reuda 15mm x 50mm x 20mm</p>
+				<p class="precio">$40000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+			    </div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/7.jpg" alt="">
+				<div class="product-txt">
+				<h3>Ruedas Medianas</h3>
+				<p>Rueda 20mm x 80mm x 40mm</p>
+				<p class="precio">$80000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/8.jpg" alt="">
+				<div class="product-txt">
+				<h3>Ruedas Grandes</h3>
+				<p>Rueda 30mm x 200mm x 50mm</p>
+				<p class="precio">$150000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/9.jpg" alt="">
+				<div class="product-txt">
+				<h3>Rejilla Metalica</h3>
+				<p>Rejilla metalica 500mm x 8mm x 800mm x 30mm</p>
+				<p class="precio">$800000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="9">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/10.jpg" alt="">
+				<div class="product-txt">
+				<h3>Rodillo de bandas</h3>
+				<p>Tubo 400 in x 1000mm</p>
+				<p class="precio">$500000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/11.jpg" alt="">
+				<div class="product-txt">
+				<h3>Tambor</h3>
+				<p>Tambor 14in x 800mm</p>
+				<p class="precio">$1000000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="11">Agregar al carrito</a>
+				</div>
+			</div>
+			<div class="product">
+				<img src="imagenes/productos/12.jpg" alt="">
+				<div class="product-txt">
+				<h3>Tapa</h3>
+				<p>20in x 15mm</p>
+				<p class="precio">$700000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="12">Agregar al carrito</a>
+				</div>
+				</div>
+		    <div class="product">
+				<img src="imagenes/productos/13.jpg" alt="">
+				<div class="product-txt">
+				<h3>Tolva</h3>
+				<p>Tolva 400cm x 400cm x 500cm</p>
+				<p class="precio">$2000000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="13">Agregar al carrito</a>
+				</div>
+			</div>
+            <div class="product">
+				<img src="imagenes/productos/14.jpg" alt="">
+				<div class="product-txt">
+				<h3>Tornillos Sin Fin</h3>
+				<p>Tornillo 800cm x 300mm</p>
+				<p class="precio">$800000</p>
+				<a href="#" class="agregar-carrito btn-2" data-id="14">Agregar al carrito</a>
+				</div>
+			</div>
+        <div class="product">
+            <img src="imagenes/productos/15.jpg" alt="">
+            <div class="product-txt">
+                <h3>Canastillas para enrollar alambre</h3>
+                <p>170cm x 20cm</p>
+                <p class="precio">$400000</p>
+                <a href="#" class="agregar-carrito btn-2" data-id="24">Agregar al carrito</a>
+            </div>
+        </div>
+	</div>
+	</main>		
+		
+		
+			
+		
+	
+
+   
+<footer>
+	
+	<div class="content-footer">
+		<div class="footer-logo">
+
+			<img src="imagenes/logo.png">
+
+			<h5>Calle 20 #7a - 101</h5>
+			<h5>Sogamoso</h5>
+
+			<h5>Telefono fijo: 7705930</h5>
+			<h5>elmicrometrogb@yahoo.com</h5>
+		</div>
+		<div class="footer-ubicacion">
+
+			<h5>Ubicacion</h5>
+			<hr>
+			<iframe  class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.9792196810035!2d-72.94054632552348!3d5.7161311320197425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a45d13acaf0c1%3A0xe848b4e6335b35d4!2sMicrometro%20Fabricaciones%20Industriales%20Sas!5e0!3m2!1ses-419!2sco!4v1718163353238!5m2!1ses-419!2sco" 
+        width="600" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+	</div>
+	<div class="footer-social">
+			<a href="https://www.facebook.com/share/NMADzVS4znVjK6Ww/?mibextid=qi2Omg"><i class="fa-brands fa-facebook"></i></a>
+			<a href="https://www.instagram.com/micrometros.a.s?utm_source=qr&igsh=dGF4aGYzbmRjajJ6"><i class="fa-brands fa-instagram"></i></a>
+			<a href="https://api.whatsapp.com/send/?phone=%2B573053394816&text=Hola%2C+me+gustar%C3%ADa+hacer+un+pedido%3A%0A%0A%0ATotal+a+pagar%3A+%240.00%0A%0ADatos+del+cliente%3A%0ANombre%3A+%3B%3Bc%3Bs%0ACelular%3A+%28322%29+889-0103%0ACorreo%3A+sdjdsn%0ADirecci%C3%B3n%3A+Calle+2bis+%2319a-27+apto+301%0ACiudad%3A+sogamoso&type=phone_number&app_absent=0"><i class="fa-brands fa-whatsapp"></i></a>
+		</div>
+</div>
+
+<p>&copy; 2024 Micrometro Fabricaciones Industriales SAS. Todos los derechos reservados.</p>
+</footer>
+
+
+
+
+<!-- Modal para mostrar el carrito -->
+<div id="modal-carrito" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Carrito de Compras</h2>
+        <table id="tabla-carrito">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Acción</th> 
+                </tr>
+            </thead>
+            <tbody id="lista-carrito">
+                <!-- Los productos serán agregados aquí -->
+            </tbody>
+        </table>
+        <p>Total a pagar: <strong>$<span id="total-precio">0</span></strong></p>
+        
+        <div id="formulario-cliente">
+            <h3>Datos de envío</h3>
+            <form id="formulario-envio">
+                <div class="form-group">
+                    <div class="form-column">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-column">
+                        <label for="celular">Celular:</label>
+                        <input type="text" id="celular" name="celular" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-column">
+                        <label for="correo">Correo:</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+                    <div class="form-column">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-column">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <a id="whatsapp-btn" href="#" class="btn-whatsapp">Pedir por WhatsApp</a>
+    </div>
+</div>
+
+<style> 
+        .carrito-flotante {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ff9800;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
+
+        .carrito-flotante i {
+            margin-right: 10px;
+        }
+
+        #cantidad-productos {
+            background-color: red;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+    #formulario-cliente {
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .form-column {
+        width: 48%;
+    }
+
+    #formulario-cliente label {
+        font-weight: bold;
+    }
+
+    #formulario-cliente input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #boton-whatsapp {
+        background-color: #25d366;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #boton-whatsapp:hover {
+        background-color: #1ebe5b;
+    }
+
+    /* Estilo general del modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: white;
+            margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        position: relative;
+        z-index: 10000;
+    }
+
+    .close {
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Estilo para la tabla */
+    #tabla-carrito {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    #tabla-carrito th, #tabla-carrito td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+
+    #tabla-carrito th {
+        background-color: #f2f2f2;
+        color: #333;
+        font-weight: bold;
+    }
+
+    #tabla-carrito td {
+        background-color: #fff;
+        color: #333;
+    }
+
+    /* Estilo para el botón de WhatsApp */
+    .btn-whatsapp {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #25D366;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btn-whatsapp:hover {
+        background-color: #1DA851;
+    }
+
+    /* Estilo del total */
+    p {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: right;
+        margin-top: 20px;
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carrito = [];
+    const btnAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+    const modal = document.getElementById("modal-carrito");
+    const btnCerrarModal = document.querySelector('.close');
+    const carritoFlotante = document.getElementById('carrito-flotante');
+    const cantidadProductos = document.getElementById('cantidad-productos');
+    const listaCarrito = document.getElementById('lista-carrito');
+    const totalPrecio = document.getElementById('total-precio');
+    const botonWhatsapp = document.getElementById('whatsapp-btn');
+
+    // Agregar productos al carrito
+    btnAgregarCarrito.forEach(boton => {
+        boton.addEventListener('click', function(event) {
+            event.preventDefault();
+            const producto = this.parentElement;
+            const nombreProducto = producto.querySelector('h3').textContent;
+            const precioProducto = parseFloat(producto.querySelector('.precio').textContent.replace('$', ''));
+            const idProducto = this.getAttribute('data-id');
+
+            const productoExistente = carrito.find(item => item.id === idProducto);
+
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({
+                    id: idProducto,
+                    nombre: nombreProducto,
+                    precio: precioProducto,
+                    cantidad: 1
+                });
+            }
+
+            actualizarCarrito();
+        });
+    });
+
+    carritoFlotante.addEventListener('click', function() {
+        modal.style.display = "block";
+        mostrarProductosEnCarrito();
+    });
+
+    btnCerrarModal.addEventListener('click', function() {
+        modal.style.display = "none";
+    });
+
+    function actualizarCarrito() {
+        let totalProductos = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+        cantidadProductos.textContent = totalProductos;
+    }
+
+    function mostrarProductosEnCarrito() {
+        listaCarrito.innerHTML = '';
+        let total = 0;
+
+        carrito.forEach((item, index) => {
+            listaCarrito.innerHTML += `
+                <tr>
+                    <td>${item.nombre}</td>
+                    <td>${item.cantidad}</td>
+                    <td>$${item.precio.toFixed(2)}</td> 
+         <td>
+    <button class="btn-eliminar" data-index="${index}" style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px;">
+        <i class="fas fa-trash-alt"></i> Eliminar
+    </button>
+</td>                
+                
+                
+                    </tr>
+            `;
+            total += item.precio * item.cantidad;
+        });
+
+        totalPrecio.textContent = total.toFixed(2);
+    
+     // Añadir evento a los botones de eliminar
+     document.querySelectorAll('.btn-eliminar').forEach(boton => {
+        boton.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            eliminarProducto(index);
+        });
+    });
+}
+
+function eliminarProducto(index) {
+    carrito.splice(index, 1); // Eliminar producto del carrito
+    actualizarCarrito();      // Actualizar la cantidad de productos en el carrito
+    mostrarProductosEnCarrito(); // Volver a mostrar los productos en el carrito
+}
+
+    // Enviar a WhatsApp
+    botonWhatsapp.addEventListener('click', function() {
+        const nombre = document.getElementById('nombre').value;
+        const celular = document.getElementById('celular').value;
+        const correo = document.getElementById('correo').value;
+        const direccion = document.getElementById('direccion').value;
+        const ciudad = document.getElementById('ciudad').value;
+
+        if (!nombre || !celular || !correo || !direccion || !ciudad) {
+            alert('Por favor, complete todos los campos.');
+            return;
+        }
+
+        let mensaje = `Hola, me gustaría hacer un pedido:\n\n`;
+        carrito.forEach(item => {
+            mensaje += `- ${item.nombre} x${item.cantidad}: $${(item.precio * item.cantidad).toFixed(2)}\n`;
+        });
+
+        mensaje += `\nTotal a pagar: $${totalPrecio.textContent}\n\n`;
+        mensaje += `Datos del cliente:\n`;
+        mensaje += `Nombre: ${nombre}\nCelular: ${celular}\nCorreo: ${correo}\nDirección: ${direccion}\nCiudad: ${ciudad}`;
+
+        const whatsappUrl = `https://wa.me/+573124470930?text=${encodeURIComponent(mensaje)}`;
+        window.open(whatsappUrl, '_blank');
+    });
+});
+</script>
+
+<script>
+document.getElementById("menu-icon").addEventListener("click", function() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("active"); // Alterna la clase 'active' para mostrar/ocultar el menú
+});
+</script>
+</body>
+</html>
